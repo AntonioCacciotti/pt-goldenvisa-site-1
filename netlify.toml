@@ -1,0 +1,23 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+# Misspelling domain: also add sintrasylvan.com as a domain alias in Netlify.
+[[redirects]]
+  from = "https://sintrasylvan.com/*"
+  to = "https://sintrasilvan.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.sintrasylvan.com/*"
+  to = "https://sintrasilvan.com/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"

@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #1f3a2e;
+  --color-forest-deep: #162a21;
+  --color-ivory: #f6f1e7;
+  --color-ivory-deep: #ece5d4;
+  --color-gold: #a8874a;
+  --color-charcoal: #2b2b2b;
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-inter), Inter, system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible { outline: 2px solid var(--color-forest); outline-offset: 3px; }
+.on-dark :focus-visible { outline-color: var(--color-ivory); }
+
+h1, h2, h3 { font-family: var(--font-serif); color: var(--color-forest); font-weight: 500; line-height: 1.15; }
+.on-dark h1, .on-dark h2, .on-dark h3 { color: var(--color-ivory); }
+
+.btn {
+  display: inline-block; padding: 0.9rem 1.8rem; font-size: 0.8rem; letter-spacing: 0.14em;
+  text-transform: uppercase; border: 1px solid var(--color-forest); background: var(--color-forest);
+  color: var(--color-ivory); transition: background 0.2s, color 0.2s; cursor: pointer; text-align: center;
+}
+.btn:hover { background: var(--color-forest-deep); }
+.btn-light { background: var(--color-ivory); color: var(--color-forest); border-color: var(--color-ivory); }
+.btn-light:hover { background: var(--color-ivory-deep); }
+.btn-outline { background: transparent; color: var(--color-forest); }
+.btn-outline:hover { background: var(--color-forest); color: var(--color-ivory); }
+
+.text-link { color: var(--color-forest); text-decoration: underline; text-decoration-color: var(--color-gold); text-underline-offset: 6px; }
+.on-dark .text-link { color: var(--color-ivory); }
+
+.field { display: block; width: 100%; padding: 0.75rem 0.9rem; background: #fffdf8; border: 1px solid #8a8a80; color: var(--color-charcoal); font: inherit; }
+.field:focus { outline: 2px solid var(--color-forest); outline-offset: 1px; }
